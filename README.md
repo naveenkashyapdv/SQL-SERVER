@@ -1,0 +1,1 @@
+This is Cookbook for standing up SQL server in windows 2012. Provider: Vagrant

@@ -1,0 +1,31 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+transport:
+  name: winrm
+  elevated: true
+
+platforms:
+  - name: windows-2012r2
+    driver:
+      customize:
+        memory: 512
+
+suites:
+  - name: default
+    run_list:
+      - recipe[wisa::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
+      sql_server:
+        server_sa_password: Petco123
