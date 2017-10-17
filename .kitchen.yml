@@ -28,4 +28,4 @@ suites:
         - test/smoke/default
     attributes:
       sql_server:
-        server_sa_password: Petco123
+        server_sa_password: P@ssWord!123
